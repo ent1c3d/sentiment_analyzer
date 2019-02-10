@@ -1,5 +1,6 @@
-# Sentiment Analyzer for **ucreate** ![enter image description here](https://user-images.githubusercontent.com/2203893/52539352-a64e3b80-2d96-11e9-990f-0dfe3d43db77.png)
+# Sentiment Analyzer for **ucreate** 
 
+![ucreate logo](https://user-images.githubusercontent.com/2203893/52539352-a64e3b80-2d96-11e9-990f-0dfe3d43db77.png)
 Since, one of the requirements there in assignment was to be easy to install, I decided to create it using "Docker".
 So, we have **100% Dockerized**, **swagger** friendly  **Flask** app with different kind of **tests**.
 Let's start the review
