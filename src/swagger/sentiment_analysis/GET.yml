@@ -1,0 +1,16 @@
+Return sentiment based text analyse
+---
+tags:
+  - fib
+parameters:
+  - name: tweet body
+    in: path
+    type: string
+    description: tweet body
+responses:
+  200:
+    description: sentiment analysis of tweets
+    schema:
+      example:
+          "I am happy": "POS"
+

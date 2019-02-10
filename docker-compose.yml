@@ -1,0 +1,44 @@
+server:
+  env_file:
+    - .env
+  image: python:3.4
+  working_dir: /mnt
+  volumes:
+    - .:/mnt
+  links:
+   - db
+  ports:
+    - '3000:3000'
+  container_name: sentiment_analysis_server
+  command: python src/server.py
+
+
+dbdata:
+  image: busybox
+  volumes:
+  - /var/lib/postgresql/data
+db:
+  image: postgres:9.4
+  volumes_from:
+  - dbdata
+  ports:
+    - '5432:5432'
+  container_name: sentiment_analysis_db
+
+testserver:
+  env_file: .env
+  image: python:3.4
+  working_dir: /mnt
+  volumes:
+    - .:/mnt
+  links:
+    - db #testdb
+  ports:
+    - '5053:5053'
+  environment:
+    APPLICATION_PORT: 5053
+    APPLICATION_DB_CONTAINER: DB  #TESTDB
+  command: python -m pytest test/
+
+#testdb:
+#  image: postgres:9.4

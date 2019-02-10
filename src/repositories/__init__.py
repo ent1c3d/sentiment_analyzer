@@ -1,0 +1,2 @@
+from .posts_repository import PostsRepository
+from .stopwords_repository import StopwordsRepository
