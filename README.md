@@ -40,15 +40,17 @@ After this command, you can see into 'migrations/versions', that there was creat
 $ make db/upgrade
 ```
 
-Now you already can connect with your database with any client (for example with  Navicat)
-    user: 'postgres' ; psw:'' (empty); port:5432
+Now you already can connect with your database with any client (for example with  Navicat)   
+user: 'postgres'  
+psw:'' (empty)   
+port:5432
 or with command :
 ```bash
 $ make db/connect
 ```
 
 
-**6.** For test/train data I am using nltk twitter corpus. I decided to save all of this data into my db, because I think  in the future I will add some functionality to this app(like - add new data using post requests) and it will be better, if all of this data will be already into my database, instead of json files.
+**5.** For test/train data I am using nltk twitter corpus. I decided to save all of this data into my db, because I think  in the future I will add some functionality to this app(like - add new data using post requests) and it will be better, if all of this data will be already into my database, instead of json files.
 So,  I created custom seeder and using it with flask-script extension to download nltk corpus and insert it into db.
 Just run this command:
 ```bash
